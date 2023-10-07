@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        align-content: center;
+        display: flex;
+        justify-content: center;
+        margin-top: 300px;
+        background-color: bisque;
+        width: max-content;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    li{
+        list-style: none;
+    }
+</style>
+<body>
+    <center>
+        <div>
+            <table>
+          <tr> <td><h4>Sign up</h4></td></tr>
+            <tr><td><form >
+                <label >Email</label>
+                <input type="text" class="em"><br>
+                <label >Password</label>
+                <input type="password"  class="pass"><br>
+                <button type="submit" onclick="fun()">Submit</button>
+            </form></td></tr>
+        </table>
+        </div>
+    </center>
+    <script>
+        document.queryselector("#but").addEventListener("click",fun);
+        function fun(){
+            var validRex=/[a-z]+[0-9]'@[a-z]+.com/;
+            let b=document.querySelector(".em").value;
+            let a=document.querySelector(".pass").value;
+            console.log(a+" "+b)
+            if(!a.match(validRex))
+            {
+                alert("Invalid email adress");
+            }
+            var passw=/.*[A-Z]+[0-9]+[@#$%!^&*]+.*/;
+            if(!b.match(passw))
+            {
+                alert("Invalid password");
+            }
+        }
+    </script>
+</body>
+</html>
